@@ -28,11 +28,6 @@ public class LoginFailedStepDef {
         SerenityRest.when().post(ReqresAPI.LOGIN_FAILED);
     }
 
-    @Then("Should return {int} Bad Request")
-    public void shouldReturnBadRequest(int badRequest) {
-        SerenityRest.then().statusCode(badRequest);
-    }
-
     @And("Response body should show message {string}")
     public void responseBodyShouldShowMessage(String error) {
         SerenityRest.then().body(ReqresResponses.ERROR, equalTo(error));

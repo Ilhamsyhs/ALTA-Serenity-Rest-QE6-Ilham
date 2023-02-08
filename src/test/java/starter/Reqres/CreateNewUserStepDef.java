@@ -35,11 +35,6 @@ public class CreateNewUserStepDef {
                 .body(ReqresResponses.JOB,equalTo(job));
     }
 
-    @Then("Should return {int} created")
-    public void shouldReturnCreated(int created) {
-        SerenityRest.then().statusCode(created);
-    }
-
     @And("Post create new user json schema validator")
     public void postCreateNewUserJsonSchemaValidator() {
         File json = new File(ReqresAPI.JSON_FILE+"/Validator/PostCreateNewUserJsonSchemaValidator.json");

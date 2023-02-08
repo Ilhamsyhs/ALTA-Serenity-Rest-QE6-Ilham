@@ -27,11 +27,6 @@ public class GetListUserStepDef {
         SerenityRest.when().get(ReqresAPI.GET_LIST_USER);
     }
 
-    @Then("Should return {int} OK")
-    public void shouldReturnOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
-
     @And("Response body page should be {int}")
     public void responseBodyPageShouldBe(int page) {
         SerenityRest.then().body(ReqresResponses.PAGE,equalTo(page));
@@ -51,12 +46,6 @@ public class GetListUserStepDef {
     public void getListUserWithInvalidParameterPage(String page) {
         reqresAPI.getListUserInvalid(page);
     }
-
-    @Then("Should return {int} Not Found")
-    public void shouldReturnNotFound(int notFound) {
-        SerenityRest.then().statusCode(notFound);
-    }
-
 
 
     // Scenario get user exceed parameter
